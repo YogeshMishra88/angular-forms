@@ -12,4 +12,15 @@ export class TdfformsComponent implements OnInit {
   ngOnInit() {
   }
 
+  submitData(frmValue):void{
+    console.log(frmValue);
+    let controlsValue = `Name : ${frmValue.name} , 
+                         Email : ${frmValue.email}, 
+                         Street : ${frmValue.address.street},
+                         City : ${frmValue.address.city},
+                         ZipCode : ${frmValue.address.zipcode}`;
+                         alert(controlsValue);
+  }
+
+  
 }
