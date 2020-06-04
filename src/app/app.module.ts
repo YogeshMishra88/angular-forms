@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TdfformsComponent } from './component/tdfforms/tdfforms.component';
+import { ReactiveformsComponent } from './component/reactiveforms/reactiveforms.component';
+import { ReformswithfbComponent } from './component/reformswithfb/reformswithfb.component';
+import { PagenotfoundComponent } from './component/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TdfformsComponent,
+    ReactiveformsComponent,
+    ReformswithfbComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
