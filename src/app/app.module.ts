@@ -9,6 +9,7 @@ import { TdfformsComponent } from './component/tdfforms/tdfforms.component';
 import { ReactiveformsComponent } from './component/reactiveforms/reactiveforms.component';
 import { ReformswithfbComponent } from './component/reformswithfb/reformswithfb.component';
 import { PagenotfoundComponent } from './component/pagenotfound/pagenotfound.component';
+import {CheckGuard} from './guard/check.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PagenotfoundComponent } from './component/pagenotfound/pagenotfound.com
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CheckGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

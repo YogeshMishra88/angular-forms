@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-tdfforms',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tdfforms.component.css']
 })
 export class TdfformsComponent implements OnInit {
+
+  @ViewChild('userFrm') frmRef;
 
   constructor() { }
 
