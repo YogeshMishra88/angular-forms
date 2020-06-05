@@ -1,3 +1,43 @@
-<p>
-  reactiveforms works!
-</p>
+<div class="container">
+  <h2 class="mt-5">Reactive Forms</h2>
+  <form [formGroup]="userForm" (ngSubmit)="submitFormValue()">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger">
+        Please enter name
+      </div>
+      <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
+        Please enter atleast four character
+      </div>
+      <div *ngIf="userForm.controls['name'].hasError('maxlength')" class="alert alert-danger">
+        Please do'nt exceed name more than ten character
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div formGroupName="address">
+      <div class="form-group">
+        <label>Street</label>
+        <input type="text" class="form-control" formControlName="street">
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" formControlName="city">
+      </div>
+      <div class="form-group">
+        <label>Zipcode</label>
+        <input type="text" class="form-control" formControlName="zipcode" #zipRef>
+        <div *ngIf="userForm.controls['address'].controls['zipcode'].hasError('required')" class="alert alert-danger">
+          Please enter Zipcode
+        </div>
+        <div *ngIf="userForm.controls['address'].controls['zipcode'].hasError('pattern')" class="alert alert-danger">
+          Please enter valid Zipcode
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Submit</button>
+  </form>
+</div>

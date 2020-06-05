@@ -29,7 +29,7 @@
         <div class="form-group">
           <label>ZipCode</label>
           <input type="text" #zepRef="ngModel" maxlength="5" required pattern="^[0-9][1-9]{4}$" class="form-control" name="zipcode" ngModel>
-          <div *ngIf="zepRef.errors && (zepRef.dirty || zepRef.touched)">
+          <div *ngIf="zepRef.errors && (zepRef.dirty || zepRef.touched)" class="alert alert-danger">
             <div [hidden]="!zepRef.errors.required">Please enter zipcode</div>
             <div [hidden]="!zepRef.errors.pattern">Please enter valid zipcode</div>
           </div>
